@@ -26,7 +26,7 @@ yarn create react-app PROJECT_NAME --template blip-plugin
 cd PROJECT_NAME
 ```
 
-3. Configure `./charts` according your plugin project:
+3. Execute the basic plugin configuration:
 
 ```bash
 npm run config:plugin
@@ -36,7 +36,7 @@ npm run config:plugin
 yarn config:plugin
 
 ```
-> Note: This will replace `PLUGIN_NAME` with the correct project name in the charts files.
+> Note: This command its necessary to avoid manually configuration. That will config `./charts` and `appsettings.json` automatically.
 
 4. Run the project:
 

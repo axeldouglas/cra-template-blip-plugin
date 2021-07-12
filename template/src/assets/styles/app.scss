@@ -8,11 +8,24 @@
 @import 'mixins';
 @import 'utilities';
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: $font-family;
+    background-color: #f5f8f9;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.help {
+    cursor: help;
+}
+
+.word-break {
+    word-break: break-all;
 }
 
 code {

@@ -1,30 +1,35 @@
-import { IframeMessageProxy } from 'iframe-message-proxy';
+import { IframeMessageProxy as IMP } from 'iframe-message-proxy';
 import * as IMPConstants from '../constants/iframe-message-proxy-container';
+import * as toastTypes from '../constants/blip-portal-toast-types';
 
 const startLoading = () =>
-    IframeMessageProxy.sendMessage({
+    IMP.sendMessage({
         action: IMPConstants.Actions.start_loading
     });
 
 const stopLoading = () =>
-    IframeMessageProxy.sendMessage({
+    IMP.sendMessage({
         action: IMPConstants.Actions.stop_loading
     });
 
 const setHeight = (height) =>
-    IframeMessageProxy.sendMessage({
+    IMP.sendMessage({
         action: IMPConstants.Actions.height_change,
         content: height
     });
 
-const showToast = (toast) =>
-    IframeMessageProxy.sendMessage({
+const showToast = (type, message, title) =>
+    IMP.sendMessage({
         action: IMPConstants.Actions.toast,
-        content: toast
+        content: {
+            type: toastTypes[type],
+            title,
+            message
+        }
     });
 
 const showModal = (title, body, confirm = 'ok', cancel = 'cancel') =>
-    IframeMessageProxy.sendMessage({
+    IMP.sendMessage({
         action: IMPConstants.Actions.show_modal,
         content: {
             title,
