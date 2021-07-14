@@ -33,24 +33,6 @@ const track = (
     }
 };
 
-const trackForm = (form, event = '', properties = {}) => {
-    if (!!settings.segment.key && !!window.analytics) {
-        const formated_event = toKebabCase(
-            `${settings.segment.prefix}-${event}`
-        );
-        window.analytics.trackForm(form, formated_event, properties);
-    }
-};
-
-const trackLink = (element, event = '', properties = {}) => {
-    if (!!settings.segment.key && !!window.analytics) {
-        const formated_event = toKebabCase(
-            `${settings.segment.prefix}-${event}`
-        );
-        window.analytics.trackLink(element, formated_event, properties);
-    }
-};
-
 const identify = (
     user_id = '',
     traits = {},
@@ -62,4 +44,4 @@ const identify = (
     }
 };
 
-export { load, page, track, trackForm, trackLink, identify };
+export { load, page, track, identify };

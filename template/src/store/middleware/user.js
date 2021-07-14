@@ -15,9 +15,9 @@ const getLoggedUser = async (dispatch, { payload }) => {
 
 const getUserPermission = async (dispatch, { payload }) => {
     try {
-        const permission_data = await UserService.getUserPermissions();
+        const permission_data = await UserService.userHasPermission();
         if (!!permission_data) {
-            await dispatch(UserActions.setUserPermission(permission_data));
+            await dispatch(UserActions.setUserPermission('admin'));
         }
     } catch (error) {
         // display error message

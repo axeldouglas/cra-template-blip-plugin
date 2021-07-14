@@ -18,17 +18,10 @@ Whatever name you choose will replace all occurrences of that string in the proj
 │   └───📁blip-plugin-project
 │       ├───📁templates
 │       │   ├───_helpers.tpl
-│       │   ├───autoscale.yaml
-│       │   ├───deployment.yaml
-│       │   ├───ingress.yaml
-│       │   ├───NOTES.txt
-│       │   ├───secrets.yaml
-│       │   └───service.yaml
+│       │   └───...
 │       ├───.helmignore
 │       ├───Chart.yaml
 │       └───values.yaml
-├───📁public
-│   └───...
 ├───📁src
 │   ├───📁assets
 │   │   ├───📁images
@@ -66,6 +59,7 @@ Whatever name you choose will replace all occurrences of that string in the proj
 │   ├───📁routes
 │   │   ├───Analyticts.js
 │   │   ├───index.js
+│   │   ├───Initialize.js
 │   │   └───Routes.js
 │   ├───📁services
 │   │   ├───application-service.js
@@ -74,22 +68,28 @@ Whatever name you choose will replace all occurrences of that string in the proj
 │   │   ├───📁actions
 │   │   │   ├───application.js
 │   │   │   └───...
+│   │   ├───📁middleware
+│   │   │   ├───application.js
+│   │   │   └───...
 │   │   ├───📁reducers
 │   │   │   ├───application.js
 │   │   │   └───...
+│   │   ├───combinedMiddlewares.js
 │   │   ├───connect.js
+│   │   └───index.js
+│   ├───📁translate
+│   │   ├───📁locale
+│   │   |   ├───...
+│   │   │   ├───📁pt-br
+│   │   │   │   └───...
+│   │   │   └───index.js
 │   │   └───index.js
 │   ├───📁utils
 │   │   └───...
 │   ├───App.js
 │   └───index.js
-├───⚙️.env
-├───⚙️.eslintignore
-├───⚙️.eslintrc
-├───⚙️.gitignore
-├───⚙️.prettierrc
 ├───⚙️package.json
-└───⚙️README.md
+└───...
 ```
 
 ## Usage
@@ -110,7 +110,7 @@ Access the project folder.
 cd PROJECT_NAME
 ```
 
-> Configure `./charts` according your project. Replace `PLUGIN_NAME` with the correct plugin name.
+Execute the basic plugin configuration.
 
 ```bash
 npm run config:plugin
@@ -119,6 +119,8 @@ npm run config:plugin
 
 yarn config:plugin
 ```
+
+> Note: This command its necessary to avoid manually configuration. That will config `./charts` and `appsettings.json` automatically.
 
 Then, run the project.
 

@@ -1,7 +1,7 @@
 {
     "package": {
         "name": "blip-plugin-template",
-        "version": "0.1.7",
+        "version": "0.1.8",
         "author": {
             "name": "Axel Douglas Santos",
             "email": "axel.santos@take.net"
@@ -47,7 +47,16 @@
             "collectCoverage": true,
             "collectCoverageFrom": [
                 "src/**/*.{js,jsx,ts,tsx}",
-                "!**/node_modules/**"
+                "!**/node_modules/**",
+                "!src/assets/**",
+                "!src/config/**",
+                "!src/constants/**",
+                "!src/factory/**",
+                "!src/hooks/**",
+                "!src/routes/**",
+                "!src/store/**",
+                "!src/App.js",
+                "!src/index.js"
             ],
             "coverageDirectory": "<rootDir>/coverage/",
             "testResultsProcessor": "jest-sonar-reporter",
@@ -65,18 +74,7 @@
                 "global": {
                     "lines": 20
                 }
-            },
-            "coveragePathIgnorePatterns": [
-                "<rootDir>/src/App.js",
-                "<rootDir>/src/index.js",
-                "<rootDir>/src/config/",
-                "<rootDir>/src/factory/",
-                "<rootDir>/src/hooks/",
-                "<rootDir>/src/routes/",
-                "<rootDir>/src/services/",
-                "<rootDir>/src/store/",
-                "<rootDir>/src/utils/"
-            ]
+            }
         },
         "babel": {
             "presets": ["react-app"],
@@ -86,10 +84,7 @@
                         [
                             "react-remove-properties",
                             {
-                                "properties": [
-                                    "data-test",
-                                    "data-testid"
-                                ]
+                                "properties": ["data-test", "data-testid"]
                             }
                         ]
                     ]

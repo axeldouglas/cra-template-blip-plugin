@@ -15,7 +15,7 @@ import * as ApplicationActions from '../store/actions/application';
 import * as CommonActions from '../store/actions/common';
 import * as UserActions from '../store/actions/user';
 
-import sleep from '../utils/sleep';
+import { sleep } from '../utils/sleep';
 
 const DEFAULT_LANGUAGE = 'pt';
 const DELAY_TIME = 600;
@@ -40,10 +40,7 @@ const Initialize = ({ dispatch }) => {
             await getLanguage();
             await sleep(DELAY_TIME);
 
-            showToast({
-                type: BlipPortalToastTypes.success,
-                message: t('success.loaded')
-            });
+            showToast(BlipPortalToastTypes.success, t('success.loaded'));
         });
     };
 
